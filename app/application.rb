@@ -8,8 +8,8 @@ class Application
 
        item_name = req.path.split("/items/").last
 
-       if @@item.detect{|i| i.name == item_name} != nil
-         item = @@item.find{|i| i.name == item_name}
+       if @@items.detect{|i| i.name == item_name} != nil
+         item = @@items.find{|i| i.name == item_name}
          resp.write "#{item.price}"
          resp.status = 200
        else
